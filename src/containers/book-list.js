@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 //define a component as a container instead of a
-//component. Container is a React component that that
+//component. Container is a React component that
 //has a direct connection to the state held by Redux
 import { connect } from 'react-redux';
 import { selectBook } from '../actions/index';
@@ -10,7 +10,12 @@ class BookList extends Component {
   renderList() {
     return this.props.books.map(book => {
       return (
-        <li key={book.title} className="list-group-item">{book.title}</li>
+        <li
+          key={book.title}
+          onClick={() => this.props.selectBook(book)}
+          className="list-group-item">
+          {book.title}
+        </li>
       );
     });
   }
@@ -39,7 +44,6 @@ function mapDispatchToProps(dispatch) {
   //to all of our reducers
   return bindActionCreators({ selectBook }, dispatch);
 }
-
 
 //Promote BookList from component to container - needs to know
 //about this new dispatch method, selectBook. Make it available
