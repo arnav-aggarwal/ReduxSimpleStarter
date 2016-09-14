@@ -9,7 +9,7 @@ export const FETCH_WEATHER = 'FETCH_WEATHER';
 
 export function fetchWeather(city) {
   const countryCode = 'us';
-  const url = `${ROOT_URL}&q=${city},${countryCode}`;
+  const url = `${ROOT_URL}&q=${city},${countryCode}&units=imperial`;
   const request = axios.get(url);
   
   return {
