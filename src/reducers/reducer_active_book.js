@@ -10,6 +10,6 @@ export default function(state = null, action) {
       return action.payload;
   }
 
-  //must always return a non-undef. value
+  //must always return a non-undefined value
   return state;
 }
