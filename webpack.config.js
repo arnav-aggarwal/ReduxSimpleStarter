@@ -11,13 +11,11 @@ module.exports = {
     loaders: [{
       exclude: /node_modules/,
       loader: 'babel',
+      test: /\.jsx?$/,
       query: {
-        presets: ['react', 'es2015', 'stage-1']
+        presets: ['react', 'es2017', 'stage-0']
       }
     }]
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx']
   },
   devServer: {
     historyApiFallback: true,
