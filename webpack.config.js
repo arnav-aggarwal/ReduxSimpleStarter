@@ -1,5 +1,6 @@
 module.exports = {
   entry: [
+    'babel-regenerator-runtime',
     './src/index.js'
   ],
   output: {
